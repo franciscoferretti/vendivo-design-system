@@ -1,0 +1,15 @@
+{
+  "name": "@vendivo/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.js", "default": "./dist/index.js" },
+    "./brand-tokens.css": { "default": "./dist/brand-tokens.css" },
+    "./dist/*": "./dist/*",
+    "./tokens.json": "./tokens.json"
+  },
+  "files": ["dist", "tokens.json", "README.md", "scripts"],
+  "scripts": { "build": "node scripts/build.mjs" }
+}
