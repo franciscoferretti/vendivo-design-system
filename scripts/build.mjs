@@ -6,4 +6,6 @@ const css = `:root {\n  --brand-primary: ${tokens.light.primary}; --brand-primar
 await mkdir(new URL('../dist/', import.meta.url), { recursive: true });
 await writeFile(new URL('../dist/index.js', import.meta.url), js);
 await writeFile(new URL('../dist/brand-tokens.css', import.meta.url), css);
+const marketplaceSectionsCss = await readFile(new URL('../src/marketplace-sections.css', import.meta.url), 'utf8');
+await writeFile(new URL('../dist/marketplace-sections.css', import.meta.url), marketplaceSectionsCss);
 

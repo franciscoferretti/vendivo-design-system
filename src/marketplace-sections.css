@@ -1,0 +1,75 @@
+/* Shared Marketplace commercial section contract. Values live in this design-system file. */
+:root {
+  --marketplace-commercial-canvas-background: #f5f5f5;
+  --marketplace-commercial-canvas-bleed-mobile: 16px;
+  --marketplace-commercial-canvas-bleed-tablet: 16px;
+  --marketplace-commercial-canvas-bleed-desktop: 24px;
+  --marketplace-commercial-canvas-padding-mobile: 16px 0;
+  --marketplace-commercial-canvas-padding-tablet: 16px;
+  --marketplace-commercial-canvas-padding-desktop: 20px 24px;
+  --marketplace-commercial-section-gap-mobile: 24px;
+  --marketplace-commercial-section-gap-tablet: 28px;
+  --marketplace-commercial-section-gap-desktop: 32px;
+  --marketplace-commercial-section-radius: 5px;
+  --marketplace-commercial-section-padding-mobile: 16px;
+  --marketplace-commercial-section-padding-tablet: 16px;
+  --marketplace-commercial-section-padding-desktop: 20px 20px 24px;
+  --marketplace-commercial-header-content-gap-mobile: 12px;
+  --marketplace-commercial-header-content-gap-tablet: 12px;
+  --marketplace-commercial-header-content-gap-desktop: 16px;
+}
+
+.marketplace-commercial-canvas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--marketplace-commercial-section-gap-mobile);
+  margin-inline: calc(-1 * var(--marketplace-commercial-canvas-bleed-mobile));
+  padding: var(--marketplace-commercial-canvas-padding-mobile);
+  background: var(--marketplace-commercial-canvas-background);
+}
+
+.marketplace-commercial-canvas > * { margin-bottom: 0 !important; }
+
+.marketplace-commercial-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--marketplace-commercial-section-gap-mobile);
+  margin-top: 0;
+}
+
+.marketplace-commercial-section {
+  border-radius: var(--marketplace-commercial-section-radius);
+  padding: var(--marketplace-commercial-section-padding-mobile);
+  background: var(--vd-surface-raised);
+  box-shadow: none;
+}
+
+.marketplace-commercial-section > .mb-4 {
+  margin-bottom: var(--marketplace-commercial-header-content-gap-mobile);
+}
+
+@media (min-width: 768px) {
+  .marketplace-commercial-canvas {
+    gap: var(--marketplace-commercial-section-gap-tablet);
+    margin-inline: calc(-1 * var(--marketplace-commercial-canvas-bleed-tablet));
+    padding: var(--marketplace-commercial-canvas-padding-tablet);
+  }
+  .marketplace-commercial-stack { gap: var(--marketplace-commercial-section-gap-tablet); }
+  .marketplace-commercial-section { padding: var(--marketplace-commercial-section-padding-tablet); }
+  .marketplace-commercial-section > .mb-4 {
+    margin-bottom: var(--marketplace-commercial-header-content-gap-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .marketplace-commercial-canvas {
+    gap: var(--marketplace-commercial-section-gap-desktop);
+    margin-inline: calc(-1 * var(--marketplace-commercial-canvas-bleed-desktop));
+    padding: var(--marketplace-commercial-canvas-padding-desktop);
+  }
+  .marketplace-commercial-stack { gap: var(--marketplace-commercial-section-gap-desktop); }
+  .marketplace-commercial-section { padding: var(--marketplace-commercial-section-padding-desktop); }
+  .marketplace-commercial-section > .mb-4 {
+    margin-bottom: var(--marketplace-commercial-header-content-gap-desktop);
+  }
+}
