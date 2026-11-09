@@ -9,3 +9,7 @@ await writeFile(new URL('../dist/brand-tokens.css', import.meta.url), css);
 const marketplaceSectionsCss = await readFile(new URL('../src/marketplace-sections.css', import.meta.url), 'utf8');
 await writeFile(new URL('../dist/marketplace-sections.css', import.meta.url), marketplaceSectionsCss);
 
+
+// Las declaraciones se publican junto con el JavaScript y toman su forma del mismo JSON.
+const declaration = `import raw from '../tokens.json';\nexport declare const vendivoDesignSystem: typeof raw;\nexport declare const SELLER_THEMES: { readonly light: typeof raw.light; readonly dark: typeof raw.dark };\nexport declare const GEOMETRY: typeof raw.geometry;\nexport type SellerTheme = keyof typeof SELLER_THEMES;\nexport type SemanticColors = typeof raw.light;\nexport type DesignSystemTokens = typeof raw;\nexport declare const INTERACTIVE_CONTRACTS: { readonly selectable: 'surfaceSelected + border primary + primary indicator'; readonly checkable: 'solid primary control + white check or dot'; readonly tab: 'primary text or icon + indicator'; readonly chip: 'surfaceSelected + primary border and text'; readonly cta: 'solid primary + onBrand text' };\n`;
+await writeFile(new URL('../dist/index.d.ts', import.meta.url), declaration);
